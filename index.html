@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#ffffff">
+  <title>Goodwill of North Florida Kiosk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div class="logo-placeholder" aria-hidden="true">GW</div>
+      <div>
+        <h1>Goodwill of North Florida</h1>
+        <p>Customer Kiosk</p>
+      </div>
+    </header>
+
+    <section id="home" class="screen active">
+      <h2>Welcome!</h2>
+      <p class="subtitle">What would you like to do?</p>
+
+      <div class="button-grid">
+        <button class="kiosk-button" data-url="https://goodwillnorthfl.org/careers-at-goodwill/">
+          <span class="icon">💼</span>
+          <span>Careers</span>
+        </button>
+
+        <button class="kiosk-button" data-url="https://hub.comosense.com/login">
+          <span class="icon">📊</span>
+          <span>ComoSense</span>
+        </button>
+
+        <button class="kiosk-button" data-url="https://shopgoodwill.com/home">
+          <span class="icon">🛒</span>
+          <span>ShopGoodwill</span>
+        </button>
+
+        <button class="kiosk-button feedback-button" id="feedbackButton">
+          <span class="icon">⭐</span>
+          <span>Customer Feedback</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="feedback" class="screen">
+      <button class="back-button" id="backButton">← Back</button>
+      <h2>Customer Feedback</h2>
+      <p class="subtitle">We'd love to hear about your experience.</p>
+
+      <form id="feedbackForm">
+        <fieldset>
+          <legend>How was your overall experience?</legend>
+          <div class="rating-group">
+            <label><input type="radio" name="overall" value="1" required><span>1</span></label>
+            <label><input type="radio" name="overall" value="2"><span>2</span></label>
+            <label><input type="radio" name="overall" value="3"><span>3</span></label>
+            <label><input type="radio" name="overall" value="4"><span>4</span></label>
+            <label><input type="radio" name="overall" value="5"><span>5</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>How was our staff?</legend>
+          <div class="rating-group">
+            <label><input type="radio" name="staff" value="1" required><span>1</span></label>
+            <label><input type="radio" name="staff" value="2"><span>2</span></label>
+            <label><input type="radio" name="staff" value="3"><span>3</span></label>
+            <label><input type="radio" name="staff" value="4"><span>4</span></label>
+            <label><input type="radio" name="staff" value="5"><span>5</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>How was the store?</legend>
+          <div class="rating-group">
+            <label><input type="radio" name="store" value="1" required><span>1</span></label>
+            <label><input type="radio" name="store" value="2"><span>2</span></label>
+            <label><input type="radio" name="store" value="3"><span>3</span></label>
+            <label><input type="radio" name="store" value="4"><span>4</span></label>
+            <label><input type="radio" name="store" value="5"><span>5</span></label>
+          </div>
+        </fieldset>
+
+        <label class="text-field">
+          <span>What did we do well?</span>
+          <textarea name="whatWentWell" rows="3" placeholder="Tell us what you liked..."></textarea>
+        </label>
+
+        <label class="text-field">
+          <span>What could we improve?</span>
+          <textarea name="improve" rows="3" placeholder="Tell us how we can improve..."></textarea>
+        </label>
+
+        <label class="text-field">
+          <span>Additional comments</span>
+          <textarea name="comments" rows="3" placeholder="Anything else you'd like us to know?"></textarea>
+        </label>
+
+        <fieldset>
+          <legend>Would you like someone to contact you?</legend>
+          <div class="choice-group">
+            <label><input type="radio" name="contact" value="Yes" required> Yes</label>
+            <label><input type="radio" name="contact" value="No"> No</label>
+          </div>
+        </fieldset>
+
+        <label class="text-field">
+          <span>Email or phone (optional)</span>
+          <input type="text" name="contactInfo" autocomplete="off" placeholder="Email or phone number">
+        </label>
+
+        <button class="submit-button" type="submit">Submit Feedback</button>
+      </form>
+    </section>
+
+    <section id="thankYou" class="screen thank-you">
+      <div class="success-icon">✓</div>
+      <h2>Thank You!</h2>
+      <p>Your feedback has been submitted.</p>
+      <p class="small">Returning to the kiosk home screen...</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
