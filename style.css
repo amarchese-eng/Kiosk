@@ -35,15 +35,14 @@ body {
   padding: 10px 0 24px;
 }
 
-.logo-placeholder {
-  width: 58px;
-  height: 58px;
-  border: 2px dashed #aaa;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-weight: 800;
-  color: #777;
+.goodwill-logo {
+  display: block;
+  width: clamp(64px, 10vw, 82px);
+  height: clamp(64px, 10vw, 82px);
+  object-fit: cover;
+  object-position: top center;
+  /* Crop the full stacked logo to show only the standalone Smiling G mark. */
+  filter: none;
 }
 
 .header h1 {
@@ -257,4 +256,141 @@ textarea:focus, input[type="text"]:focus {
   .kiosk-button {
     min-height: 135px;
   }
+}
+
+/* Embedded website browser */
+.browser-screen {
+  min-height: 70vh;
+}
+
+.browser-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 10px 0 12px;
+}
+
+.browser-title {
+  display: flex;
+  flex: 1;
+  min-width: 160px;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.browser-title strong {
+  font-size: clamp(20px, 3vw, 28px);
+}
+
+.browser-title span,
+.browser-footnote {
+  color: #666;
+  font-size: 14px;
+}
+
+.browser-fallback-button {
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  background: #e8e8e8;
+  color: #222;
+  font: inherit;
+  font-weight: 700;
+  min-height: 46px;
+}
+
+.browser-fallback-button:disabled {
+  opacity: .5;
+}
+
+.browser-notice {
+  margin: 0 0 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #fff7df;
+  color: #5b4710;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.browser-notice.is-error {
+  background: #fff0f0;
+  color: #7c2020;
+}
+
+.iframe-wrap {
+  width: 100%;
+  height: min(68vh, 820px);
+  min-height: 420px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 3px 12px rgba(0,0,0,.06);
+}
+
+#siteFrame,
+#shopGoodwillFrame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: white;
+}
+
+#siteFrame.is-hidden,
+#shopGoodwillFrame.is-hidden {
+  display: none !important;
+}
+
+.browser-footnote {
+  line-height: 1.45;
+  margin: 10px 2px 0;
+}
+
+@media (max-width: 650px) {
+  .browser-toolbar {
+    align-items: stretch;
+  }
+
+  .browser-title {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .home-browser-button,
+  .browser-fallback-button {
+    flex: 1;
+  }
+
+  .iframe-wrap {
+    height: 62vh;
+    min-height: 320px;
+  }
+}
+
+
+/* Google Forms feedback embed */
+.google-form-wrap {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, .06);
+}
+
+.google-form-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 1250px;
+  border: 0;
+  background: #fff;
+}
+
+.form-note {
+  color: #666;
+  text-align: center;
+  font-size: 15px;
+  padding: 12px 0 28px;
 }
