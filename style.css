@@ -38,9 +38,9 @@ body {
 .goodwill-logo {
   display: block;
   width: 100%;
-  max-width: 110px;
+  max-width: 70px;
   height: auto;
-  max-height: 65px;
+  max-height: 25px;
   object-fit: contain;
 }
 
@@ -392,4 +392,14 @@ textarea:focus, input[type="text"]:focus {
   text-align: center;
   font-size: 15px;
   padding: 12px 0 28px;
+}
+
+@media screen and (max-width: 1024px) {
+  .goodwill-logo {
+    width: 70px;
+    max-width: 70px;
+    max-height: 45px;
+    height: auto;
+    object-fit: contain;
+  }
 }
