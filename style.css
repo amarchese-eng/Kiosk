@@ -37,12 +37,11 @@ body {
 
 .goodwill-logo {
   display: block;
-  width: clamp(64px, 10vw, 82px);
-  height: clamp(64px, 10vw, 82px);
-  object-fit: cover;
-  object-position: top center;
-  /* Crop the full stacked logo to show only the standalone Smiling G mark. */
-  filter: none;
+  width: 100%;
+  max-width: 110px;
+  height: auto;
+  max-height: 65px;
+  object-fit: contain;
 }
 
 .header h1 {
